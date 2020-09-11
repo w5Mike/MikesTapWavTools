@@ -8,4 +8,6 @@ This is a repository containing Visual Studio 2015 source code for the tools and
 
 The tools are written in C# using Visual Studio Community 2015, and require the Microsoft .NET Framework Version 4.
 
+(This program is free software. It comes without any warranty, to the extent permitted by applicable law. You can redistribute it and/or modify it as you wish, at your own risk.)
+
 Mike.
