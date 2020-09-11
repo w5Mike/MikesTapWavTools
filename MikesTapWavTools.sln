@@ -1,0 +1,71 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikesWavMaker", "MikesWavMaker\MikesWavMaker.csproj", "{1D601694-7ECC-4E36-8B96-4E0B1C831B53}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MikesTapMaker", "MikesTapMaker\MikesTapMaker.csproj", "{E1A03842-20B6-46BF-9B94-63871D623D6E}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MikesTapWavToolsSetup", "MikesTapWavSetup\MikesTapWavSetup.vdproj", "{4FCCF020-0557-4A25-A2D7-5438D3900BBC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documents", "Documents", "{3F49872C-BA0A-47C2-A8CF-616D802EA937}"
+	ProjectSection(SolutionItems) = preProject
+		Documents\MikesTapMaker.png = Documents\MikesTapMaker.png
+		Documents\MikesTapMakerScreenshot.png = Documents\MikesTapMakerScreenshot.png
+		Documents\MikesWavMaker.png = Documents\MikesWavMaker.png
+		Documents\MikesWavMakerScreenshot.png = Documents\MikesWavMakerScreenshot.png
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Debug|x86.Build.0 = Debug|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Release|x86.ActiveCfg = Release|Any CPU
+		{1D601694-7ECC-4E36-8B96-4E0B1C831B53}.Release|x86.Build.0 = Release|Any CPU
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Debug|x86.ActiveCfg = Debug|x86
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Debug|x86.Build.0 = Debug|x86
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Release|x86.ActiveCfg = Release|x86
+		{E1A03842-20B6-46BF-9B94-63871D623D6E}.Release|x86.Build.0 = Release|x86
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Debug|Any CPU.ActiveCfg = Debug
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Debug|Any CPU.Build.0 = Debug
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Debug|x86.ActiveCfg = Debug
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Debug|x86.Build.0 = Debug
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Release|Any CPU.ActiveCfg = Release
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Release|Any CPU.Build.0 = Release
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Release|x86.ActiveCfg = Release
+		{4FCCF020-0557-4A25-A2D7-5438D3900BBC}.Release|x86.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://m2400:8080/tfs/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = MikesWavMaker\\MikesWavMaker.csproj
+		SccProjectName1 = MikesWavMaker
+		SccLocalPath1 = MikesWavMaker
+		SccProjectUniqueName2 = MikesTapMaker\\MikesTapMaker.csproj
+		SccProjectName2 = MikesTapMaker
+		SccLocalPath2 = MikesTapMaker
+		SccProjectUniqueName3 = MikesTapWavSetup\\MikesTapWavSetup.vdproj
+		SccProjectName3 = MikesTapWavSetup
+		SccLocalPath3 = MikesTapWavSetup
+	EndGlobalSection
+EndGlobal
