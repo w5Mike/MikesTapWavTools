@@ -80,9 +80,9 @@ namespace MikesWavMaker
                 this.loadName = filename;
 
                 this.offset++;
-                if (this.fileBytes[this.offset] != 66 && this.fileBytes[this.offset] != 77)
+                if (this.fileBytes[this.offset] != 66 && this.fileBytes[this.offset] != 77  && this.fileBytes[this.offset] != 68)
                 {
-                    resultText.Append("Error reading tap file. File type (M/B) not found." + Environment.NewLine);
+                    resultText.Append("Error reading tap file. File type (M/B/D) not found." + Environment.NewLine);
                     this.failed = true;
                     return resultText.ToString();
                 }
@@ -100,7 +100,7 @@ namespace MikesWavMaker
             resultText.Append("Header Information: " + Environment.NewLine + "-------------------" + Environment.NewLine);
             resultText.Append("Load Name: " + this.loadName + Environment.NewLine);
             resultText.Append("File Type: " + this.fileType + Environment.NewLine);
-            resultText.Append("Program Length: " + this.programLength + " bytes" + Environment.NewLine);
+            resultText.Append("Program/Data Length: " + this.programLength + " bytes" + Environment.NewLine);
             if (this.fileType == 'M')
             {
                 resultText.Append("Load Point: 0x" + $"{this.loadPoint:X4}" + Environment.NewLine);
@@ -141,7 +141,7 @@ namespace MikesWavMaker
             StringBuilder resultText = new StringBuilder();
             resultText.Append(Environment.NewLine + "Trailing Information: " + Environment.NewLine + "---------------------" + Environment.NewLine);
 
-            if (this.fileType == 'M')
+            if (this.fileType == 'M' || this.fileType == 'D')
             {
                 this.checksum = this.fileBytes[pos++];
                 this.mysteryByte = this.fileBytes[pos++];
@@ -156,7 +156,7 @@ namespace MikesWavMaker
                 pos += 11;
             }
 
-            if (this.fileType != '9')
+            if (this.fileType != '9' && this.fileType != 'D')
             {
                 this.executionPoint = BitConverter.ToUInt16(new byte[2] { this.fileBytes[pos++], this.fileBytes[pos++] }, 0);
                 resultText.Append("Execution Point: 0x" + $"{this.executionPoint:X4}" + Environment.NewLine + Environment.NewLine);

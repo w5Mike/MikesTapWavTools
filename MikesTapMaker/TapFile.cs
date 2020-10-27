@@ -19,12 +19,6 @@ namespace MikesTapMaker
 
         internal string TapName = "";
 
-        // Little endian. Probably not needed (already little edian)
-        public ushort SwapBytes(ushort x)
-        {
-            return (ushort)((ushort)(x << 8) | (x >> 8));
-        }
-
         internal bool WriteTapFile(string filename)
         {
             try
@@ -41,30 +35,32 @@ namespace MikesTapMaker
                     }
                     else
                     {
-                        // Basic/Machine Code header
+                        // Basic/Data/Machine Code header
                         binWriter.Write(this.loadName.ToCharArray(), 0, this.loadName.Length);
                         binWriter.Write(this.fileType);
                         binWriter.Write(BitConverter.GetBytes(this.programLength), 0, 2);
                         if (this.fileType == 'M')
                             binWriter.Write(BitConverter.GetBytes(this.loadPoint), 0, 2);
                     }
-                    // Program (all file types)
+
+                    // Program (all file types) - also "Data" content
                     binWriter.Write(this.program, 0, this.program.Length);
 
                     // Trailing info
-                    if (this.fileType == 'M')
-                    {
+                    if (this.fileType != 'B')
                         binWriter.Write(this.checksum);
+
+                    if ((this.fileType == 'M') || (this.fileType == 'D'))
                         binWriter.Write(this.mysteryByte);
-                    }
+
                     if (this.fileType == '9')
                     {
-                        binWriter.Write(this.checksum);
                         byte[] padding = new byte[] { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
                         binWriter.Write(padding);
                         binWriter.Write((byte)0x80);
                     }
-                    else
+
+                    if ((this.fileType == 'M') || (this.fileType == 'B'))
                     {
                         byte[] exPointBytes = BitConverter.GetBytes(this.executionPoint);
                         binWriter.Write(exPointBytes);

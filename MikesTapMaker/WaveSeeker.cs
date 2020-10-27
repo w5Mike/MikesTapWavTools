@@ -173,8 +173,8 @@ namespace MikesTapMaker
             if ((!this.readByte(out theByte)) || this.EndOfFile)
                 return Convert.ToChar(0);
 
-            // Check if 'B' or 'M'
-            if ((theByte == 66) || (theByte == 77))
+            // Check if 'B' or 'M' or 'D'
+            if ((theByte == 66) || (theByte == 77) || (theByte == 68))
                 return Convert.ToChar(theByte);
             else
                 return Convert.ToChar(0);

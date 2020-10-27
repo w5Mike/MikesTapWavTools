@@ -114,7 +114,7 @@ namespace MikesTapMaker
                 infoTextBox.AppendText(Environment.NewLine + "Trailing Information:" + Environment.NewLine + "---------------------" + Environment.NewLine);
 
                 // Read checksum
-                if ((tapFile.fileType == 'M') || (tapFile.fileType == '9'))
+                if ((tapFile.fileType == 'M') || (tapFile.fileType == 'D') || (tapFile.fileType == '9'))
                 {
                     if (!waveSeeker.readChecksum(out tapFile.checksum))
                         infoTextBox.AppendText("Warning: Checksum wrong/not found (ignored)" + Environment.NewLine);
@@ -132,7 +132,7 @@ namespace MikesTapMaker
                         infoTextBox.AppendText(Environment.NewLine + "Warning: checksums disagree (ignored)" + Environment.NewLine);
                     tapFile.checksum = actualChecksum;
 
-                    if (tapFile.fileType == 'M')
+                    if ((tapFile.fileType == 'M') || (tapFile.fileType == 'D'))
                     {
                         waveSeeker.readByte(out tapFile.mysteryByte);
                         infoTextBox.AppendText("Mystery byte: " + tapFile.mysteryByte.ToString("X2") + Environment.NewLine);
@@ -140,7 +140,7 @@ namespace MikesTapMaker
                 }
 
                 // Read excution point
-                if (tapFile.fileType != '9')
+                if (tapFile.fileType != '9' && tapFile.fileType != 'D')
                 {
                     tapFile.executionPoint = waveSeeker.readUShort();
                     infoTextBox.AppendText("Execution point: 0x" + tapFile.executionPoint.ToString("X4") + Environment.NewLine);
@@ -271,11 +271,7 @@ namespace MikesTapMaker
             tapFile.fileType = waveSeeker.readFileType();
 
             if (tapFile.fileType == '\0')
-            {
                 infoTextBox.AppendText("Warning: File Type not found." + Environment.NewLine);
-                //infoTextBox.AppendText("Failed: File Type not found." + Environment.NewLine);
-                //return false;
-            }
             else
                 infoTextBox.AppendText("File Type: " + tapFile.fileType + Environment.NewLine);
 
@@ -288,11 +284,7 @@ namespace MikesTapMaker
             tapFile.programLength = waveSeeker.readUShort();
 
             if (tapFile.programLength == 0)
-            {
                 infoTextBox.AppendText("Warning: Program Length not found." + Environment.NewLine);
-                //infoTextBox.AppendText("Failed: Program Length not found." + Environment.NewLine);
-                //return false;
-            }
             else
                 infoTextBox.AppendText("Program Length: " + tapFile.programLength + Environment.NewLine);
 
@@ -498,7 +490,6 @@ namespace MikesTapMaker
 
                 if (charVersion != "")
                     infoTextBox.AppendText(" " + charVersion + Environment.NewLine + Environment.NewLine);
-
             }
         }
     }

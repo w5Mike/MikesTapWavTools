@@ -170,10 +170,10 @@ namespace MikesWavMaker
                         this.WriteByte(tap.program[i]);
 
                     //Output checksum
-                    if ((tap.fileType == 'M') || (tap.fileType == '9'))
+                    if ((tap.fileType == 'M') || (tap.fileType == '9') || (tap.fileType == 'D'))
                         this.WriteByte(tap.checksum);
 
-                    if (tap.fileType == 'M')
+                    if ((tap.fileType == 'M') || (tap.fileType == 'D'))
                         this.WriteByte(tap.mysteryByte);
 
                     if ((tap.fileType == 'M') || (tap.fileType == 'B'))
