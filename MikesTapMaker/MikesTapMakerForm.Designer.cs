@@ -150,6 +150,7 @@
             this.dumpButton.TabIndex = 28;
             this.dumpButton.Text = "Dump";
             this.dumpButton.UseVisualStyleBackColor = true;
+            this.dumpButton.Visible = false;
             this.dumpButton.Click += new System.EventHandler(this.dumpButton_Click);
             // 
             // wavPanel
